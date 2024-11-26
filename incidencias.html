@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="main-container">
-        <!-- Menú lateral -->
+        <!-- Menú lateral de todas las páginas -->
         <nav id="sidebar" class="active">
             <div class="toggle-btn" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -23,7 +23,7 @@
             </ul>
         </nav>
 
-        <!-- Contenido principal de Incidencias -->
+        <!-- Contenido principal de Incidencias y información de que se hace en esta página -->
         <div id="content">
             <h2 data-translate="reportIncident">Subir Incidencia</h2>
             <p data-translate="instructions">
@@ -48,7 +48,7 @@
                 <button type="submit" class="btn btn-primary" data-translate="submitIncident">Enviar Incidencia</button>
             </form>
 
-            <!-- Sección de Mis Incidencias -->
+            <!-- Sección de reportes para los vecinos, para poder enviar las incidencias y su descripción -->
             <section id="myIncidents" class="mt-4">
                 <h2 data-translate="myIncidents">Mis Incidencias</h2>
                 <p data-translate="myIncidentsDescription">
@@ -57,7 +57,7 @@
                 <div id="incidentsList"></div>
             </section>
 
-            <!-- Sección de Historial de Incidencias Resueltas -->
+            <!-- Sección de el historial para ver como estan las incidencias -->
             <section id="resolvedIncidents" class="mt-4">
                 <h2 data-translate="resolvedIncidents">Historial de Incidencias Resueltas</h2>
                 <p data-translate="resolvedIncidentsDescription">

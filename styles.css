@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* Estilos generales de la página web */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -14,7 +14,7 @@ body {
     height: 100vh;
     flex-direction: row;
 }
-/* Estilos elegantes para el título y subtítulo */
+/* Estilos del título y el subtítulo */
 .app-title {
     font-family: 'Georgia', serif;
     font-size: 3em;
@@ -103,7 +103,7 @@ body {
     margin-left: 80px;
 }
 
-/* Imagen sin scroll */
+/* Imagen sin scroll de la pagina principal*/
 .image-container {
     position: relative;
     max-width: 100%;
@@ -145,7 +145,7 @@ body.dark-mode .info-box {
     background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para recuadros */
     color: #ffffff; /* Texto en blanco para visibilidad */
 }
-/* Ajustes para título y subtítulo en modo oscuro */
+/* Ajustes para título y subtítulo en modo oscuro y no se solapen los colores */
 body.dark-mode .app-title,
 body.dark-mode .subtitle {
     color: #ffffff; /* Texto en blanco para visibilidad en modo oscuro */
@@ -266,7 +266,7 @@ input:checked + .slider:before {
     /* Redimensionar los recuadros para que se ajusten mejor en pantallas más pequeñas */
     .info-box {
         width: 200px;
-        height: auto; /* Permitir que la altura se ajuste automáticamente */
+        height: auto; /* Ajuste de altura automático */
     }
 
     /* Ajustar tamaño del título y subtítulo */
@@ -278,7 +278,7 @@ input:checked + .slider:before {
         font-size: 1.2em;
     }
 }
-
+/*RESPONSIBIDAD PARA TABLETS Y MOVILES*/
 /* Media query para móviles (pantallas de 768px o menos) */
 @media (max-width: 768px) {
     /* Ajustar la imagen de fondo para que sea más ancha */

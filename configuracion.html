@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id="main-container">
-        <!-- Menú lateral -->
+        <!-- Menú lateral, el mismo de todas las páginas -->
         <nav id="sidebar" class="active">
             <div class="toggle-btn" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -23,7 +23,7 @@
             </ul>
         </nav>
 
-        <!-- Contenido principal de Configuración -->
+        <!-- Contenido de la configuración y explicaciones de cada opción -->
         <div id="content" class="p-4">
             <h2 class="config-title mb-4" data-translate="configTitle">Configuración</h2>
             <p class="mb-5" data-translate="configDesc">Personaliza la apariencia de la aplicación según tus preferencias.</p>
@@ -80,7 +80,7 @@
                     </select>
                 </div>
 
-                <!-- Guardar Preferencias -->
+                <!-- Botón para guardar las preferencias -->
                 <button class="btn btn-primary mt-3" onclick="savePreferences()" data-translate="savePreferences">Guardar Preferencias</button>
             </div>
         </div>

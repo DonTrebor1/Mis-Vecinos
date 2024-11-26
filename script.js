@@ -1,4 +1,4 @@
-// Definir las traducciones como variable global
+// Traductor ingles español para la accesibilidad, aqui estan todos las palabras y textos dandole un valor y su traducción
 const translations = {
     en: {
         appTitle: "MY NEIGHBORS",
@@ -120,7 +120,7 @@ if (darkModeToggle) {
     });
 }
 
-// Modo de Contraste Mejorado
+// Modo Contraste 
 const contrastToggle = document.getElementById('contrastToggle');
 if (contrastToggle) {
     contrastToggle.addEventListener('change', function() {
@@ -134,7 +134,7 @@ function adjustTextSize(size) {
     document.body.classList.add(`text-${size}`);
 }
 
-// Guardar Preferencias en localStorage
+// Guardar preferencias en localStorage para mantenerlas si se vuelve a entrar en la página
 function savePreferences() {
     const darkMode = darkModeToggle ? darkModeToggle.checked : false;
     const contrastMode = contrastToggle ? contrastToggle.checked : false;
@@ -152,7 +152,7 @@ function savePreferences() {
     alert("Preferencias guardadas correctamente.");
 }
 
-// Cargar Preferencias al Iniciar
+// Cargar preferencias al volver a entrar en la web
 function loadPreferences() {
     const darkMode = localStorage.getItem('darkMode') === 'true';
     const contrastMode = localStorage.getItem('contrastMode') === 'true';
@@ -195,7 +195,7 @@ function applyLanguage(language) {
     });
 
     // Traducir botones de incidencias
-    displayIncidents(); // Llama de nuevo a displayIncidents para aplicar el idioma en los botones dinámicos
+    displayIncidents(); // Llamo de nuevo a displayIncidents para aplicar el idioma en los botones dinámicos
 }
 
 // Convertir imagen a Base64
@@ -233,7 +233,7 @@ document.getElementById('complaintForm')?.addEventListener('submit', async funct
     document.getElementById('complaintForm').reset();
 });
 
-// Mostrar incidencias en "Mis Incidencias" y "Historial de Incidencias"
+// Mostrar incidencias en "Mis Incidencias" y "Historial de Incidencias" 
 function displayIncidents() {
     const incidentsList = document.getElementById('incidentsList');
     const resolvedList = document.getElementById('resolvedList');
@@ -268,7 +268,7 @@ function displayIncidents() {
     });
 }
 
-// Confirmación antes de marcar como Resuelta
+// Confirmación antes de marcar como Resuelta, asi evitar error de darle sin querer
 function confirmResolved(index) {
     const confirmation = confirm(translations[localStorage.getItem('language') || 'es'].confirmResolved);
     if (confirmation) {
@@ -276,7 +276,7 @@ function confirmResolved(index) {
     }
 }
 
-// Confirmación antes de eliminar una incidencia en "Mis Incidencias"
+// Confirmación antes de eliminar una incidencia en "Mis Incidencias", asi evitar error de darle sin querer
 function confirmDeleteIncident(index) {
     const confirmation = confirm(translations[localStorage.getItem('language') || 'es'].confirmDelete);
     if (confirmation) {
@@ -284,7 +284,7 @@ function confirmDeleteIncident(index) {
     }
 }
 
-// Confirmación antes de eliminar una incidencia en el historial
+// Confirmación antes de eliminar una incidencia en el "Historial", asi evitar error de darle sin querer
 function confirmDeleteResolved(index) {
     const confirmation = confirm(translations[localStorage.getItem('language') || 'es'].confirmDelete);
     if (confirmation) {
@@ -292,7 +292,7 @@ function confirmDeleteResolved(index) {
     }
 }
 
-// Actualizar estado de la incidencia y moverla a Historial si está Resuelta
+// Actualizar estado de la incidencia y moverla a "Historial" si se marca como "Resuelta"
 function updateStatus(index, status) {
     incidents[index].status = status;
     if (status === 'Resuelta') {
@@ -318,7 +318,7 @@ function deleteResolvedIncident(index) {
     displayIncidents();
 }
 
-// Inicializar la visualización de incidencias y preferencias al cargar
+// Inicializar la visualización de incidencias y preferencias al cargar la página
 window.onload = function() {
     loadPreferences();
     displayIncidents();
