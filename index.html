@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="appTitle">Mis Vecinos - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="main-container">
+        <!-- Menú lateral -->
+        <nav id="sidebar" class="active">
+            <div class="toggle-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> <span data-translate="home">Inicio</span></a></li>
+                <li><a href="incidencias.html"><i class="fas fa-tools"></i> <span data-translate="incidents">Incidencias</span></a></li>
+                <li><a href="actas.html"><i class="fas fa-file-alt"></i> <span data-translate="communityMinutes">Actas de la Comunidad</span></a></li>
+                <li><a href="configuracion.html"><i class="fas fa-cog"></i> <span data-translate="settings">Configuración</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal de Inicio -->
+        <div id="content">
+            <header>
+                <h1 class="app-title" data-translate="appTitle">MIS VECINOS</h1>
+                <h2 class="subtitle" data-translate="subtitle">Gestión de incidencias y comunidad</h2>
+            </header>
+
+            <!-- Imagen con recuadros encima -->
+            <section class="image-container">
+                <img src="images/bloquevecinos.webp" alt="Comunidad de vecinos" class="main-image">
+                <div class="info-boxes-overlay">
+                    <div class="info-box">
+                        <h3 data-translate="votingSystem">Registro y Gestión de Votos</h3>
+                        <p data-translate="votingSystemDescription">Los residentes pueden votar en tiempo real sin necesidad de delegar su voto, permitiendo una mayor participación en las decisiones de la comunidad.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3 data-translate="reportIncident">Reporte de Incidencias</h3>
+                        <p data-translate="reportIncidentDescription">Registra incidencias al instante desde cualquier dispositivo, con la opción de adjuntar imágenes para una mayor claridad.</p>
+                    </div>
+                    <div class="info-box">
+                        <h3 data-translate="communityMinutes">Actas de la Comunidad</h3>
+                        <p data-translate="communityMinutesDescription">Accede fácilmente a las actas de las reuniones y mantente informado sobre las decisiones y actualizaciones más importantes de la comunidad.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

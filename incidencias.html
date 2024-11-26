@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="appTitle">Mis Vecinos - Incidencias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="main-container">
+        <!-- Menú lateral -->
+        <nav id="sidebar" class="active">
+            <div class="toggle-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> <span data-translate="home">Inicio</span></a></li>
+                <li><a href="incidencias.html"><i class="fas fa-tools"></i> <span data-translate="incidents">Incidencias</span></a></li>
+                <li><a href="actas.html"><i class="fas fa-file-alt"></i> <span data-translate="communityMinutes">Actas de la Comunidad</span></a></li>
+                <li><a href="configuracion.html"><i class="fas fa-cog"></i> <span data-translate="settings">Configuración</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal de Incidencias -->
+        <div id="content">
+            <h2 data-translate="reportIncident">Subir Incidencia</h2>
+            <p data-translate="instructions">
+                ¿Tienes un problema en tu comunidad? Sigue estos pasos para reportarlo:
+                <ol>
+                    <li data-translate="step1">Escribe una breve descripción de lo que ocurre.</li>
+                    <li data-translate="step2">Si tienes una foto del problema, puedes adjuntarla (opcional).</li>
+                    <li data-translate="step3">Haz clic en "Enviar Incidencia" para que el administrador la reciba.</li>
+                </ol>
+            </p>
+            <form id="complaintForm" class="complaint-form">
+                <div class="form-group">
+    <label for="description" data-translate="descriptionLabel">Descripción de la incidencia:</label>
+    <textarea id="description" class="form-control" placeholder="Describe tu problema..." data-translate="placeholderDescription" required></textarea>
+</div>
+
+                <div class="form-group">
+                    <label for="imageUpload" data-translate="attachImage">Adjuntar imagen (opcional):</label>
+                    <input type="file" id="imageUpload" class="form-control-file" accept="image/*">
+                    <span class="file-label" data-translate="noFileSelected">Ningún archivo seleccionado</span>
+                </div>
+                <button type="submit" class="btn btn-primary" data-translate="submitIncident">Enviar Incidencia</button>
+            </form>
+
+            <!-- Sección de Mis Incidencias -->
+            <section id="myIncidents" class="mt-4">
+                <h2 data-translate="myIncidents">Mis Incidencias</h2>
+                <p data-translate="myIncidentsDescription">
+                    Aquí puedes ver las incidencias que has reportado. Cada incidencia incluye una descripción, una imagen (si la adjuntaste), y su estado actual: Pendiente, Vista o Resuelta.
+                </p>
+                <div id="incidentsList"></div>
+            </section>
+
+            <!-- Sección de Historial de Incidencias Resueltas -->
+            <section id="resolvedIncidents" class="mt-4">
+                <h2 data-translate="resolvedIncidents">Historial de Incidencias Resueltas</h2>
+                <p data-translate="resolvedIncidentsDescription">
+                    Esta sección muestra un historial de todas las incidencias que han sido resueltas, para que puedas revisarlas en cualquier momento.
+                </p>
+                <div id="resolvedList"></div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

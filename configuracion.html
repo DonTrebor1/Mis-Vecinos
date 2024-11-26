@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate="configTitle">Mis Vecinos - Configuración</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div id="main-container">
+        <!-- Menú lateral -->
+        <nav id="sidebar" class="active">
+            <div class="toggle-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" onclick="toggleMenu()"><i class="fas fa-home"></i> <span data-translate="home">Inicio</span></a></li>
+                <li><a href="incidencias.html" onclick="toggleMenu()"><i class="fas fa-tools"></i> <span data-translate="incidents">Incidencias</span></a></li>
+                <li><a href="actas.html" onclick="toggleMenu()"><i class="fas fa-file-alt"></i> <span data-translate="communityMinutes">Actas de la Comunidad</span></a></li>
+                <li><a href="configuracion.html" onclick="toggleMenu()"><i class="fas fa-cog"></i> <span data-translate="settings">Configuración</span></a></li>
+            </ul>
+        </nav>
+
+        <!-- Contenido principal de Configuración -->
+        <div id="content" class="p-4">
+            <h2 class="config-title mb-4" data-translate="configTitle">Configuración</h2>
+            <p class="mb-5" data-translate="configDesc">Personaliza la apariencia de la aplicación según tus preferencias.</p>
+
+            <div class="settings-list">
+                <!-- Modo Oscuro/Claro -->
+                <div class="setting-item mb-4">
+                    <h4 data-translate="darkMode">Modo Oscuro</h4>
+                    <p class="setting-description mb-2" data-translate="darkModeDesc">
+                        Activa el modo oscuro para reducir el brillo de la pantalla y facilitar la lectura en entornos con poca luz.
+                    </p>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <!-- Tamaño del Texto -->
+                <div class="setting-item mb-4">
+                    <h4 data-translate="textSize">Tamaño del Texto</h4>
+                    <p class="setting-description mb-2" data-translate="textSizeDesc">
+                        Ajusta el tamaño del texto para mejorar la visibilidad y la comodidad de lectura.
+                    </p>
+                    <div class="text-size-controls d-flex gap-2">
+                        <button class="btn btn-secondary" onclick="adjustTextSize('small')" data-translate="small">A-</button>
+                        <button class="btn btn-secondary" onclick="adjustTextSize('medium')" data-translate="medium">A</button>
+                        <button class="btn btn-secondary" onclick="adjustTextSize('large')" data-translate="large">A+</button>
+                        <button class="btn btn-secondary" onclick="adjustTextSize('x-large')" data-translate="xlarge">A++</button>
+                        <button class="btn btn-secondary" onclick="adjustTextSize('xx-large')" data-translate="xxlarge">A+++</button>
+                    </div>
+                </div>
+
+                <!-- Contraste Mejorado -->
+                <div class="setting-item mb-4">
+                    <h4 data-translate="contrastMode">Contraste Mejorado</h4>
+                    <p class="setting-description mb-2" data-translate="contrastModeDesc">
+                        Activa el contraste mejorado para hacer más visibles los elementos en pantalla y facilitar la lectura.
+                    </p>
+                    <label class="switch">
+                        <input type="checkbox" id="contrastToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <!-- Selección de Idioma -->
+                <div class="setting-item mb-4">
+                    <h4 data-translate="language">Idioma</h4>
+                    <p class="setting-description mb-2" data-translate="languageDesc">
+                        Selecciona el idioma en el que prefieres visualizar la aplicación.
+                    </p>
+                    <select id="languageSelect" class="form-control language-select">
+                        <option value="es" data-translate="spanish">Español</option>
+                        <option value="en" data-translate="english">Inglés</option>
+                    </select>
+                </div>
+
+                <!-- Guardar Preferencias -->
+                <button class="btn btn-primary mt-3" onclick="savePreferences()" data-translate="savePreferences">Guardar Preferencias</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

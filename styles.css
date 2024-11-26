@@ -1,0 +1,330 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    overflow-x: hidden;
+    color: #343a40;
+}
+
+/* Estructura principal */
+#main-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+/* Estilos elegantes para el título y subtítulo */
+.app-title {
+    font-family: 'Georgia', serif;
+    font-size: 3em;
+    font-weight: 700;
+    text-align: center;
+    color: #343a40;
+}
+
+.subtitle {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-align: center;
+    color: #565656;
+}
+
+/* Menú lateral */
+#sidebar {
+    width: 300px;
+    background: #2b2b2b;
+    color: #e0e0e0;
+    height: 100vh;
+    transition: all 0.3s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+    font-size: 20px;
+}
+
+#sidebar.active {
+    width: 80px;
+}
+
+#sidebar .toggle-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    cursor: pointer;
+    color: #e0e0e0;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 60px;
+}
+
+#sidebar ul li {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    color: #e0e0e0;
+}
+
+#sidebar ul li:hover {
+    background: #383838;
+}
+
+#sidebar ul li i {
+    margin-right: 15px;
+    font-size: 1.8em;
+    color: #e0e0e0;
+}
+
+#sidebar ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+#sidebar.active ul li span {
+    display: none;
+}
+
+/* Contenido principal */
+#content {
+    margin-left: 300px;
+    padding: 20px;
+    width: calc(100% - 300px);
+    transition: margin-left 0.3s;
+}
+
+#sidebar.active ~ #content {
+    margin-left: 80px;
+}
+
+/* Imagen sin scroll */
+.image-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.main-image {
+    width: 100%;
+    height: 80vh;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.info-boxes-overlay {
+    position: absolute;
+    text-align: center;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    display: flex;
+    gap: 80px;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    width: 250px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* Ajustes para modo oscuro en la página principal */
+body.dark-mode .info-box {
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro para recuadros */
+    color: #ffffff; /* Texto en blanco para visibilidad */
+}
+/* Ajustes para título y subtítulo en modo oscuro */
+body.dark-mode .app-title,
+body.dark-mode .subtitle {
+    color: #ffffff; /* Texto en blanco para visibilidad en modo oscuro */
+}
+
+
+/* Tamaños de texto */
+.text-small {
+    font-size: 16px;
+}
+.text-medium {
+    font-size: 18px;
+}
+.text-large {
+    font-size: 20px;
+}
+.text-x-large {
+    font-size: 22px;
+}
+.text-xx-large {
+    font-size: 24px;
+}
+/* Espaciado entre botones de tamaño de texto */
+.text-size-controls button {
+    margin-right: 8px;
+}
+
+/* Modo Oscuro */
+.dark-mode { background-color: #121212; color: #ffffff; }
+.dark-mode #sidebar { background-color: #1f1f1f; }
+
+
+
+/* Modo de alto contraste */
+.high-contrast {
+    background-color: #000000;
+    color: #ffff00;
+}
+
+.high-contrast a {
+    color: #00ffff;
+}
+
+.high-contrast .btn {
+    background-color: #ffff00;
+    color: #000000;
+}
+
+.high-contrast #sidebar {
+    background-color: #000000;
+    color: #ffff00;
+}
+
+.high-contrast #sidebar ul li i {
+    color: #ffff00;
+}
+
+/* Selector de idioma ajustado */
+.language-select {
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Interruptor deslizante */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}
+
+/* Media query para tablets (pantallas de entre 768px y 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    /* Ajustar la imagen de fondo en tablets */
+    .main-image {
+        height: 60vh;
+    }
+
+    /* Redimensionar los recuadros para que se ajusten mejor en pantallas más pequeñas */
+    .info-box {
+        width: 200px;
+        height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+
+    /* Ajustar tamaño del título y subtítulo */
+    .app-title {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+}
+
+/* Media query para móviles (pantallas de 768px o menos) */
+@media (max-width: 768px) {
+    /* Ajustar la imagen de fondo para que sea más ancha */
+    .main-image {
+        width: 110%; /* Hacer la imagen un poco más ancha */
+        height: 100vh; /* Ocupa toda la altura de la pantalla */
+        object-fit: cover;
+        margin-left: -5%; /* Centrar la imagen horizontalmente */
+    }
+
+    /* Centrar los recuadros en la pantalla */
+    .info-boxes-overlay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        padding-top: 20px;
+        overflow-y: auto;
+        max-height: calc(100vh - 50px);
+    }
+
+    .info-box {
+        width: 85%; /* Ajustar el ancho al 85% para centrarlo mejor */
+        margin-bottom: 15px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+    }
+
+    /* Ajustar tamaño del título y subtítulo para móviles */
+    .app-title {
+        font-size: 2em;
+        text-align: center; /* Centrar el título */
+    }
+
+    .subtitle {
+        font-size: 1em;
+        text-align: center; /* Centrar el subtítulo */
+    }
+
+    /* Asegurar que el contenido principal permita desplazamiento */
+    #content {
+        padding: 20px;
+        text-align: center; /* Centrar contenido en el móvil */
+    }
+}
